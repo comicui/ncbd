@@ -14,7 +14,7 @@ var HomeTemplate = [
   // Another Ratchet component, a fancy list divider.
   ' <ul class="list divider-list"><li class="list-divider">August 28, 2013</li></ul>',
   // In the view, we will use the flickable zepto plugin here, to animate this carousel.
-  ' <div class="carousel-container">',
+  '<div class="carousel-container">',
   '   <ul class="carousel-list">',
   '     <li class="carousel-item">',
   '       <summary>A+X &#35;11</summary>',
@@ -28,7 +28,7 @@ var HomeTemplate = [
   '       <summary>Avengers Arena &#35;14</summary>',
   '       <img src="http://ncbd.comicui.com/images/03.jpg"/>',
   '     </li>',
-  '     <li class="carousel-item">',
+  /*  '     <li class="carousel-item">',
   '       <summary>Captain America &#35;10</summary>',
   '       <img src="http://ncbd.comicui.com/images/04.jpg"/>',
   '     </li>',
@@ -44,16 +44,71 @@ var HomeTemplate = [
   '       <summary>FF &#35;11</summary>',
   '       <img src="http://ncbd.comicui.com/images/07.jpg"/>',
   '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Gambit &#35;16</summary>',
+  '       <img src="http://ncbd.comicui.com/images/08.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Journey Into Mystery &#35;655</summary>',
+  '       <img src="http://ncbd.comicui.com/images/09.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>New Avengers &#35;9</summary>',
+  '       <img src="http://ncbd.comicui.com/images/10.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Rocket Raccoon: Tales from Half World</summary>',
+  '       <img src="http://ncbd.comicui.com/images/11.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Scarlet Spider &#35;21</summary>',
+  '       <img src="http://ncbd.comicui.com/images/12.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Secret Avengers &#35;8</summary>',
+  '       <img src="http://ncbd.comicui.com/images/13.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Thanos Rising &#35;5</summary>',
+  '       <img src="http://ncbd.comicui.com/images/14.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Thor God of Thunder &#35;12</summary>',
+  '       <img src="http://ncbd.comicui.com/images/15.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Ultimate Comics Ultimate Spider-man &#35;26</summary>',
+  '       <img src="http://ncbd.comicui.com/images/16.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Uncanny Avengers &#35;11</summary>',
+  '       <img src="http://ncbd.comicui.com/images/17.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Uncanny X-men &#35;11</summary>',
+  '       <img src="http://ncbd.comicui.com/images/18.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Wolverine &amp; the X-men &#35;35</summary>',
+  '       <img src="http://ncbd.comicui.com/images/19.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Wolverine MAX</summary>',
+  '       <img src="http://ncbd.comicui.com/images/20.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Young Avengers</summary>',
+  '       <img src="http://ncbd.comicui.com/images/21.jpg"/>',
+  '     </li>',*/
   '   </ul>',
   ' <div class="carousel-navigation-container">',
-  '   <ul class="carousel-navigation"><li class="active" data-index="0"></li><li data-index="1"></li><li data-index="2"></li><li data-index="3"></li><li data-index="4"></li><li data-index="5"></li><li data-index="6"></ul>',
+  '   <ul class="carousel-navigation"><li class="active" data-index="0"></li><li data-index="1"></li><li data-index="2"></ul>',
   ' </div>',
   ' </div>',
   ' <div class="button-positive button-block show-more-button">Last Week</div>',
   '</div>'
   // Join the array with a new-line for a quick and easy html template.
 ].join('\n');
-
 // ### HomeView
 // A Jr.View works just like a Backbone.View, except whenever you attach a click event,
 // if will check to see if you are on a touch device and if you are, attach a
@@ -70,7 +125,7 @@ var HomeView = Jr.View.extend({
   },
   setUpCarousel: function() {
     var after = function() {
-      this.$('.carousel-list').flickable({segments:6});
+      this.$('.carousel-list').flickable({segments:3});
     };
     setTimeout(after,1);
   },
@@ -106,7 +161,6 @@ var HomeView = Jr.View.extend({
 
 // ### RatchetTemplate
 // This is just a template that shows different UI elements that you can use from the Ratchet project
-
 var RatchetTemplate = [
   '<header class="bar-title">',
   ' <div class="header-animated">',
@@ -114,7 +168,7 @@ var RatchetTemplate = [
 // with a 'header-animated' class.
   '   <div class="button-prev">Back</div>',
   '   <h1 class="title">#NCBD #ComicUI</h1>',
-  '   <div class="button-next">Next</div>',
+  //'   <div class="button-next">Next</div>',
   '</header>',
   '<div class="content ratchet-content">',
   ' <p>ncbd.comicui.com is powered by the Jr. HTML5 framework.</p>',
@@ -140,22 +194,18 @@ var RatchetTemplate = [
 ].join('\n');
 
 // ### RatchetView
-
 var RatchetView = Jr.View.extend({
   render: function(){
     this.$el.html(RatchetTemplate);
     return this;
   },
-
   events: {
     'click .button-prev': 'onClickButtonPrev',
     'click .button-next': 'onClickButtonNext',
     'click .example-toggle': 'onClickExampleToggle'
   },
-
   onClickButtonPrev: function() {
     // Trigger the animation for the back button on the toolbar
-
     Jr.Navigator.navigate('home',{
       trigger: true,
       animation: {
@@ -165,7 +215,6 @@ var RatchetView = Jr.View.extend({
       }
     });
   },
-
   onClickButtonNext: function() {
     Jr.Navigator.navigate('pushstate',{
       trigger: true,

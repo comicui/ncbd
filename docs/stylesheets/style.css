@@ -23,9 +23,9 @@ header.junior-intro {
 }
 
 .carousel-item {
-  width: 33.33333%;
+  width: 33;
   color: white;
-  height: 512px;
+  height: auto;
   text-align: center;
   font-weight: lighter;
   font-size: 1.8em;
