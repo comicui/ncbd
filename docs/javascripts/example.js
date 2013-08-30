@@ -1,12 +1,3 @@
-// This is the javascript file that is used to power the live example in the iphone on this [github page for the Junior HTML5 mobile framework](http://justspamjustin.github.com/junior/).
-// Don't forget, that you need to include the necessary js and css dependencies
-// that are listed on the main github page.  You will also need some initial scaffolding
-// in the body of your HTML like this:
-// <pre class="highlight">&lt;div id=<em class="s1">"app-container"</em>&gt;
-//    &lt;div id=<em class="s1">"app-main"</em>&gt;
-//    &lt;div&gt;
-//&lt;div&gt;</pre>
-
 // ## Defining Templates and Views
 
 // ### HomeTemplate
@@ -17,34 +8,48 @@ var HomeTemplate = [
   // Put in a div with class content.  Ratchet will style this appropriately.
   '<div class="content">',
   ' <header class="junior-intro">',
-  '   <h1 class="junior-name"><i class="icon-umbrella"></i> Junior</h1>',
-  '   <p>A front-end framework for building html5 mobile apps with a native look and feel.</p>',
+  '   <h1>#NCBD</h1>',
+  '   <p>New Comic Book Day Checklist</p>',
   ' </header>',
   // Another Ratchet component, a fancy list divider.
-  ' <ul class="list divider-list"><li class="list-divider">Features</li></ul>',
+  ' <ul class="list divider-list"><li class="list-divider">August 28, 2013</li></ul>',
   // In the view, we will use the flickable zepto plugin here, to animate this carousel.
   ' <div class="carousel-container">',
   '   <ul class="carousel-list">',
-  '     <li class="carousel-item native-look-and-feel">',
-  '       <summary>Transitions with a native look and feel.</summary>',
-  '       <div class="feature-icon"></div>',
+  '     <li class="carousel-item">',
+  '       <summary>A+X &#35;11</summary>',
+  '       <img src="http://ncbd.comicui.com/images/01.jpg"/>',
   '     </li>',
-  '     <li class="carousel-item carousel-content">',
-  '       <summary>Carousels using flickable.js</summary>',
-  '       <i class="icon-picture"></i>',
+  '     <li class="carousel-item">',
+  '       <summary>Astonishing X-men &#35;66</summary>',
+  '       <img src="http://ncbd.comicui.com/images/02.jpg"/>',
   '     </li>',
-  '     <li class="carousel-item backbone-content">',
-  '       <summary>Integrated with Backbone.js</summary>',
-  '       <div class="feature-icon"></div>',
+  '     <li class="carousel-item">',
+  '       <summary>Avengers Arena &#35;14</summary>',
+  '       <img src="http://ncbd.comicui.com/images/03.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Captain America &#35;10</summary>',
+  '       <img src="http://ncbd.comicui.com/images/04.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Captain Marvel &#35;15</summary>',
+  '       <img src="http://ncbd.comicui.com/images/05.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>Deadpool &#35;15</summary>',
+  '       <img src="http://ncbd.comicui.com/images/06.jpg"/>',
+  '     </li>',
+  '     <li class="carousel-item">',
+  '       <summary>FF &#35;11</summary>',
+  '       <img src="http://ncbd.comicui.com/images/07.jpg"/>',
   '     </li>',
   '   </ul>',
-  // Add in these dots as a quick navigation for the carousel
   ' <div class="carousel-navigation-container">',
-  '   <ul class="carousel-navigation"><li class="active" data-index="0"></li><li data-index="1"></li><li data-index="2"></li></ul>',
+  '   <ul class="carousel-navigation"><li class="active" data-index="0"></li><li data-index="1"></li><li data-index="2"></li><li data-index="3"></li><li data-index="4"></li><li data-index="5"></li><li data-index="6"></ul>',
   ' </div>',
   ' </div>',
-  // Use a ratchet button here
-  ' <div class="button-positive button-block show-more-button">Show me more!</div>',
+  ' <div class="button-positive button-block show-more-button">Last Week</div>',
   '</div>'
   // Join the array with a new-line for a quick and easy html template.
 ].join('\n');
@@ -53,35 +58,27 @@ var HomeTemplate = [
 // A Jr.View works just like a Backbone.View, except whenever you attach a click event,
 // if will check to see if you are on a touch device and if you are, attach a
 // touchend event instead.
-
 var HomeView = Jr.View.extend({
   // Simply render our HomeTemplate in the View's HTML
   render: function(){
     this.$el.html(HomeTemplate);
     this.afterRender();
-    // Always return 'this' so Jr.Router can append your view to the body
     return this;
   },
-
   afterRender: function() {
     this.setUpCarousel();
   },
-
   setUpCarousel: function() {
     var after = function() {
-      // Use the flickable plugin to setup our carousel with 3 segments
-      this.$('.carousel-list').flickable({segments:3});
+      this.$('.carousel-list').flickable({segments:6});
     };
-    // We have to put this in a setTimeout so that it sets it up after the view is added to the DOM
     setTimeout(after,1);
   },
-
   events: {
     'click .show-more-button': 'onClickShowMoreButton',
     'onScroll .carousel-list': 'onScrollCarousel',
     'click .carousel-navigation li': 'onClickCarouselNavigationItem'
   },
-
   onClickShowMoreButton: function() {
     // Jr.Navigator works like Backbone.history.navigate, but it allows you to add an animation in the mix.
     Jr.Navigator.navigate('ratchet',{
@@ -94,20 +91,17 @@ var HomeView = Jr.View.extend({
     });
     return false;
   },
-
   onScrollCarousel: function() {
     // Set the active dot when the user scrolls the carousel
     var index = this.$('.carousel-list').flickable('segment');
     this.$('.carousel-navigation li').removeClass('active');
     this.$('.carousel-navigation li[data-index="'+index+'"]').addClass('active');
   },
-
   onClickCarouselNavigationItem: function(e) {
     // Scroll the carousel when the user clicks on a dot.
     var index = $(e.currentTarget).attr('data-index');
     this.$('.carousel-list').flickable('segment',index);
   }
-
 });
 
 // ### RatchetTemplate
@@ -119,11 +113,11 @@ var RatchetTemplate = [
 // If you want the contents of the header to be animated as well, put those elements inside a div
 // with a 'header-animated' class.
   '   <div class="button-prev">Back</div>',
-  '   <h1 class="title">Ratchet CSS</h1>',
+  '   <h1 class="title">#NCBD #ComicUI</h1>',
   '   <div class="button-next">Next</div>',
   '</header>',
   '<div class="content ratchet-content">',
-  ' <p>Jr. was inspired by Ratchet and pulls in their gorgeous styles.</p>',
+  ' <p>ncbd.comicui.com is powered by the Jr. HTML5 framework.</p>',
   ' <p>Here are some examples:</p>',
   ' <div class="ratchet-examples">',
   '  <ul class="list inset">',
@@ -205,17 +199,14 @@ var PushStateTemplate = [
 ].join('\n');
 
 // ## PushStateView
-
 var PushStateView = Jr.View.extend({
   render: function() {
     this.$el.html(PushStateTemplate);
     return this;
   },
-
   events: {
     'click .button-prev': 'onClickButtonPrev'
   },
-
   onClickButtonPrev: function() {
     Jr.Navigator.navigate('ratchet',{
       trigger: true,
@@ -225,39 +216,26 @@ var PushStateView = Jr.View.extend({
       }
     });
   }
-
 });
-
-//## Routing to your Views
-// Jr.Router is just like a Backbone.Router except we provide a renderView
-// that will automatically add the view to the dom and do the animation if
-// one is specified.  It will also automatically handle doing an opposite animation
-// if the back button is pressed.
-
 var AppRouter = Jr.Router.extend({
   routes: {
     'home': 'home',
     'ratchet': 'ratchet',
     'pushstate': 'pushstate'
   },
-
   home: function(){
     var homeView = new HomeView();
     this.renderView(homeView);
   },
-
   ratchet: function() {
     var ratchetView = new RatchetView();
     this.renderView(ratchetView);
   },
-
   pushstate: function() {
     var pushStateView = new PushStateView();
     this.renderView(pushStateView);
   }
-
 });
-
 var appRouter = new AppRouter();
 Backbone.history.start();
 Jr.Navigator.navigate('home',{
