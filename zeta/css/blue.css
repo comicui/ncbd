@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Font-Color Changes
+   ========================================================================== */
+
+a, .services h2, .post-info p:hover,  .post-info p a:hover, ul.sidenav li a,
+.type1 li:hover:before, .type2 li:hover:before, .commentform .required,
+.ads-provider a:hover, .required_notification, .form_hint::before,
+.contact_form input:required:valid + .form_hint::before,
+.pricing-column li.pricing-price, .footnav ul li a:hover { 
+    color: #00AEC8; 
+}
+
+/* ==========================================================================
+   Border-Color Change
+   ========================================================================== */
+
+h6, nav.navigation ul li ul li a:hover, nav.navigation select,
+.blog-image span, .author-box, ul.clients_list li img, .team:hover,
+.portfolio .item:hover img, .portfolio .item:hover, input.search_bar:focus,
+ul.footer-list li a:hover, .footnav ul li a:hover, .promoted-plan{ 
+    border-color: #00AEC8; 
+}
+
+/* ==========================================================================
+   Background-Color Change
+   ========================================================================== */
+
+a.button, a.button_small, .intro:first-letter, .slider .carousel .carousel-caption h2, 
+.slider-progress, .blog-image span i, .blog2 .blog-meta, .calendar span,
+.post-info p:hover > span, .post-info p a:hover > span, .services h2 i, .comment-tabs a:hover, 
+.commentform p .button, ul.sidenav li.active a, ul.sidenav li.active,
+.not-ie .team:hover:after, .no-touch .back:hover, #portfolio-filter li a:hover, 
+.portfolio #filters li a.active, .portfolio-single .portfolio-single-meta,
+.scrollTop a:hover, .contact_form input:required:valid + .form_hint,
+button.submit, input.search_submit, nav.navigation ul li ul li a:hover { 
+    background-color: #00AEC8; 
+}
+
+pre { border-left-color: #B0E7EE; }
+
+/* ==========================================================================
+   Special Condition Classes
+   ========================================================================== */
+
+ul.tabs li.active, .pricing-column:hover > .pricing-title { 
+    border-top-color: #00AEC8; 
+}
+
+nav ul li a.selected { border-top-color: #00AEC8; color: #00AEC8; }
+
+ol li:before{ background: #00AEC8; }
+ol li:hover:after{ left: -.5em; border-left-color: #00AEC8;	}
+
+nav.navigation ul li a:hover { border-top-color: #00AEC8; color: #00AEC8; }
+.parallax { background: #00AEC8 !important; }
+.author-reply { border-color: #00AEC8; background-color: #D9F3F7; }
+
+/*
+* Demo Styles 
+*/
+.show-grid div:hover, .the-icons li:hover { background-color: #00AEC8; }
