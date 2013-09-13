@@ -182,7 +182,8 @@ hr {
     position: absolute;
     right: 0;
     bottom: 40%;
-    width: 65%;
+    /* width: 65%; */
+	width: 45%;
     max-width: 840px;
     background: #FFFFFF;
     background: rgba(255,255,255,0.5);
@@ -847,35 +848,25 @@ a .icon-rotate-90:before,a .icon-rotate-180:before,a .icon-rotate-270:before,a .
 
 /* Large desktop */
 @media (min-width: 1200px) {
-
-}
- 
+} 
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) { 
-    
+@media (min-width: 768px) and (max-width: 979px) {
     #countdown [class*="span"] { font-size: 70px; line-height: 55px }
     #countdown span { font-size: 16px }
     .social-icons li { margin-right: 5px }
     .social-icons li a { font-size: 12px; padding-right: 5px }
     .social-icons li a i { margin-right: 5px }
-    
 }
- 
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) { 
-    
+@media (max-width: 767px) {
     .content { bottom: inherit; top: 5%; background: rgba(255,255,255,0.9); }
     #countdown [class*="span"] { font-size: 50px; line-height: 40px }
     #countdown span { font-size: 16px }
     .social-icons li { margin-right: 5px; width: 30px; overflow: hidden; }
     .social-icons li a { font-size: 12px; padding-right: 5px }
     .social-icons li a i { margin-right: 5px }
-    
 }
- 
 /* Landscape phones and down */
-@media (max-width: 480px) { 
-    
+@media (max-width: 480px) {
     .content { top: 2% }
-    
 }
