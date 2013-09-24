@@ -16,7 +16,7 @@ $(function () {
     Countdown
 ========================================================================== */ 
 
-var end = new Date('09/18/2013 10:00 AM');
+var end = new Date('09/25/2013 11:00 AM');
 var _second = 1000;
 var _minute = _second * 60;
 var _hour = _minute * 60;
